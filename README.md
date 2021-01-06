@@ -5,6 +5,8 @@ GCP(Google Cloud Platform)의 CentOS 7버전과 Spring Boot Framework에 Thymele
 Yahoo Finance API와 Google Chart API를 이용하여 US주식기호를 검색해 지난 180일 동안의 최대이익을 산출하는 매수 및 매도날짜와 이익을 출력하는 웹 기능 개발.
 
 ### Updates
+| **Date** | **Contents** |
+| *-------* | *--------* |
 | 2021.01.06 | Upload |
 | 예정 | Spring Security를 추가하고 url에서 포트번호 없이 접속할 수 있도록 설정할 예정. |
 
