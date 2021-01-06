@@ -1,7 +1,7 @@
 # Portfolio Page
 
-link : http://joel.star.is:8080
+http://joel.star.is:8080
 
 # Stock Page
 
-link : http://joel.star.is:8080/stock
+http://joel.star.is:8080/stock
