@@ -1,4 +1,11 @@
-# Portfolio Page
+# Web Project
+
+GCP(Google Cloud Platform)의 CentOS 7버전과 Spring Boot Framework에 Thymeleaf 템플릿을 이용하여 반응형 웹 포트폴리오 개발.
+Yahoo Finance API와 Google Chart API를 이용하여 US주식기호를 검색해 지난 180일 동안의 최대이익을 산출하는 매수 및 매도날짜와 이익을 출력하는 웹 기능 개발.
+
+<br />
+
+## Portfolio Page
 
 http://joel.star.is:8080
 
@@ -9,7 +16,7 @@ http://joel.star.is:8080
 
 <br />
 
-# Stock Page
+## Stock Page
 
 http://joel.star.is:8080/stock
 
