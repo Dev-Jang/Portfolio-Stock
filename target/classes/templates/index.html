@@ -1,0 +1,215 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Web Project | JOELIKE</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="landing is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index">JOELIKE</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index">Home</a></li>
+											<li><a href="stock">Stock</a></li>
+											<li><a href="generic">Generic</a></li>
+											<li><a href="elements">Elements</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2><text style="color:greenyellow">JOEL</text>IKE</h2>
+							<p>Joel likes development</p>
+							<p>This is Joel's Web Project</p><br />
+							<ul class="icons">
+								<li><a href="https://github.com/Dev-Jang" class="icon brands fa-github" style="font-size: 40px;"><span class="label">GitHub</span></a></li>
+							</ul>
+						</div>
+						<a href="#one" class="more scrolly">Learn More</a>
+					</section>
+
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+						<div class="inner">
+							<span class="image left" style="margin: 2em 8em 5em 7em;"><div class="box2" style="background: #BDBDBD;"><img class="profile" src="images/mypic.jpg" alt="" /></div></span>
+							<header class="major" style="text-align: left;">
+								<h2>About Me</h2>
+								<p>만나뵙게 되어서 반갑습니다! 개발자를 희망하는 장주영입니다.<br /> 저는 어디서나 꼭 필요한 사람이 되자라는 가치관을 가지고 있습니다.<br /> 웹개발자가 되기 위해 정보처리기사 자격증을 취득하고,<br /> TOEIC과 TOEIC SPEAKING 등 영어공부도 신경 쓰며,<br /> 개인프로젝트들을 진행하면서 다양한 지식을 쌓고 있습니다.</p>
+							</header>
+						</div>
+					</section>
+
+
+				<!-- Three -->
+				<section id="three" class="wrapper style3 special">
+					<div class="inner">
+						<header class="major">
+							<h2>Skills</h2>
+						</header>
+						<ul class="features">
+							<li class="icon solid fa-code">
+								<h3>Language</h3>
+								<div class="table-wrapper">
+									<table style="border: 0;">
+										<tr>
+											<td>C</td>
+											<td><progress value="30" max="100"></progress></td>
+										</tr>
+										<tr>
+											<td>JAVA</td>
+											<td><progress value="80" max="100"></progress></td>
+										</tr>
+										<tr>
+											<td>Python</td>
+											<td><progress value="70" max="100"></progress></td>
+										</tr>
+									</table>
+								</div>
+							</li>
+							<li class="icon solid fa-power-off">
+								<h3>Framework</h3>
+								<table style="border: 0;">
+									<tr>
+										<td>Spring</td>
+										<td><progress value="80" max="100"></progress></td>
+									</tr>
+									<tr>
+										<td>Node.js</td>
+										<td><progress value="40" max="100"></progress></td>
+									</tr>
+									<tr>
+										<td>React.js</td>
+										<td><progress value="20" max="100"></progress></td>
+									</tr>
+								</table>
+							</li>
+							<li class="icon solid fa-database">
+								<h3>Database</h3>
+								<table style="border: 0;">
+									<tr>
+										<td>MySQL</td>
+										<td><progress value="80" max="100"></progress></td>
+									</tr>
+									<tr>
+										<td>Oracle</td>
+										<td><progress value="80" max="100"></progress></td>
+									</tr>
+									<tr>
+										<td>MongoDB</td>
+										<td><progress value="70" max="100"></progress></td>
+									</tr>
+								</table>
+							</li>
+							<li class="icon solid fa-laptop">
+								<h3>ETC</h3>
+								<table style="border: 0;">
+									<tr>
+										<td>Git</td>
+										<td><progress value="50" max="100"></progress></td>
+									</tr>
+									<tr>
+										<td>AWS</td>
+										<td><progress value="75" max="100"></progress></td>
+									</tr>
+									<tr>
+										<td>Linux</td>
+										<td><progress value="70" max="100"></progress></td>
+									</tr>
+								</table>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+
+				<!-- Two -->
+					<section id="two" class="wrapper alt style2">
+						<section class="spotlight">
+							<div class="image"><img src="images/stock.jpg" alt="" /></div><div class="content">
+								<h2>[개인프로젝트] 지난 180일 동안의 주식 최대이익</h2>
+								<p>Yahoo Finance API를 이용하여 지난 180일 동안의 최대 이익을 얻을 수 있는 
+									매수 및 매도 날짜와 가격을 구하는 웹 프로젝트입니다.</p>
+								<a href="http://joel.star.is:8080/stock"><i class="icon solid fa-link"></i> link</a>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/smartwindow.jpg" alt="" /></div><div class="content">
+								<h2>[졸업프로젝트] IoT를 활용한 Smart Window</h2>
+								<p>서버와 데이터베이스를 담당하여 AWS EC2 Ubuntu와 Spring Boot Framework, MongoDB를 통해 
+								창문을 제어하는 웹 어플리케이션을 개발하였습니다.</p>
+								<a href="https://github.com/Dev-Jang/Graduation-Project"><i class="icon solid fa-link"></i> link</a>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
+								<h2>[개인프로젝트] TextRank를 적용한 네이버블로그 웹 크롤링</h2>
+								<p>BoilerPipe 모듈을 사용한 Ver1.0과 Ver 1.0의 문제점들을 해결하고 
+									Newspaper 모듈을 사용한 Ver2.0가 있습니다.<br />
+									(네이버 UI가 변경되면서 작동하지 않게 되었습니다.)</p>
+									<a href="https://github.com/Dev-Jang/Web-Crawling-and-TextRank"><i class="icon solid fa-link"></i> link</a>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/blockchain.jpg" alt="" /></div><div class="content">
+								<h2>[개인프로젝트] 블록체인 직접 구현해보기</h2>
+								<p>급부상한 블록체인에 대한 개념과 이해를 위해 
+									직접 Python을 이용하여 예제를 보고 구현하였습니다.</p>
+								<a href="https://github.com/Dev-Jang/BlockChain"><i class="icon solid fa-link"></i> link</a>
+							</div>
+						</section>
+					</section>
+
+
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>Contact me</h2>
+								<p>자유롭게 연락주세요!</p>
+							</header>
+							Email : cheonggeum@gmail.com<br />
+							Phone : 010-2205-4800<br /><br />
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://github.com/Dev-Jang" class="icon brands fa-github" style="font-size: 40px;"><span class="label">GitHub</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; 2020 JOELIKE</li><li>GCP + Spring Boot + Thymeleaf</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

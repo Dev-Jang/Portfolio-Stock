@@ -1,0 +1,178 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Web Project - Stock | JOELIKE</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+
+    <body class="is-preload">
+
+        <!-- Page Wrapper -->
+            <div id="page-wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <h1><a href="index">JOELIKE</a></h1>
+                        <nav id="nav">
+                            <ul>
+                                <li class="special">
+                                    <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                                    <div id="menu">
+                                        <ul>
+                                            <li><a href="index">Home</a></li>
+                                            <li><a href="stock">Stock</a></li>
+                                            <li><a href="generic">Generic</a></li>
+                                            <li><a href="elements">Elements</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </header>
+
+                <!-- Main -->
+                    <article id="main">
+                        <header>
+                            <h2>Stock Page</h2>
+                            <p>Yahoo Finance API를 이용하여 여러 기능 구현하기</p>
+                        </header>
+                        <section class="wrapper style5">
+                            <div class="inner">
+                                <h3>Please enter the US stock symbol</h3>
+                                <form action="/getStockData" method="post">
+                                    <div class="row gtr-uniform">
+                                        <div class="col-12">
+                                            <input type="text" id="stock_symbol" name="stock_symbol" th:value="${stock_symbol}" placeholder="e.g. AAPL, GOOG" required="required">
+                                        </div>
+                                        <div class="col-12">
+                                            <ul class="actions">
+                                                <li><input type="submit" value="Search" class="primary" /></li>
+                                                <li><input type="reset" value="Reset" /></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </form>
+                                
+                                <br>
+                                
+                                <h3>Table of lowest/highest price and profit</h3>
+                                <div class="table-wrapper">
+                                    <table>
+                                        <tr>
+                                            <td></td>
+                                            <td><b>Date</td>
+                                            <td><b>Price(USD)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Buying</td>
+                                            <td th:text="${buying}"></td>
+                                            <td th:text="${low_limit}"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Selling</td>
+                                            <td th:text="${selling}"></td>
+                                            <td th:text="${high_limit}"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Profit(USD)</td>
+                                            <td></td>
+                                            <td th:text="${profit}"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <br>
+
+                                <h3>Daily Lowest & Highest Price Deflection Line Graph</h3>
+                                <div id="chart_div" style="text-align: center;"></div>
+
+
+                                <script th:inline="javascript">
+                                    var low_data = /*[[${lowData}]]*/'noValue';
+                                    var high_data = /*[[${highData}]]*/'noValue';
+                            
+                                    $(document).ready(function() {
+                                        google.charts.load('current', {
+                                            packages : [ 'line' ]
+                                        });
+                                        google.charts.setOnLoadCallback(drawLineChart);
+                                    });
+                            
+                                    function drawLineChart() {
+                                        var data = new google.visualization.DataTable();
+                                        data.addColumn('string', 'Date');
+                                        data.addColumn('number', 'High');
+                                        data.addColumn('number', 'Low');
+                                        Object.keys(low_data).forEach(function(key) {
+                                            data.addRow([ key, high_data[key], low_data[key] ]);
+                                        });
+                                        var options = {
+                                            title : 'Blog stats',
+                                            hAxis : {
+                                                title : 'Years',
+                                            },
+                                            vAxis : {
+                                                title : 'View Count'
+                                            },
+                                            width : '80%'
+                                        };
+
+                                        var chart = new google.charts.Line(document
+                                                .getElementById('chart_div'));
+                                        chart.draw(data, options);
+
+                                        //create trigger to resizeEnd event     
+                                        $(window).resize(function() {
+                                            if(this.resizeTO) clearTimeout(this.resizeTO);
+                                            this.resizeTO = setTimeout(function() {
+                                                $(this).trigger('resizeEnd');
+                                            }, 500);
+                                        });
+
+                                        //redraw graph when window resize is completed  
+                                        $(window).on('resizeEnd', function() {
+                                            drawLineChart(data);
+                                        });
+                                    }
+
+                                </script>
+
+                                <hr />
+
+                                <h4>설명</h4>
+                                <p>Yahoo Finance API를 통해 US 주식 기호로 주식 종목을 검색하여 지난 180일 동안의 최대 이익을 얻을 수 있는 매수 및 매도 날짜와 가격을 구하는 프로젝트입니다.</p>
+
+                                <p>Yahoo Finance API와 Google Chart를 이용하여 구현하였으며, 실력 향상 및 지식 쌓기의 일환으로 진행한 개인프로젝트입니다.</p>
+
+                            </div>
+                        </section>
+                    </article>
+
+                <!-- Footer -->
+                    <footer id="footer">
+                        <ul class="icons">
+                            <li><a href="https://github.com/Dev-Jang" class="icon brands fa-github" style="font-size: 40px;"><span class="label">GitHub</span></a></li>
+                        </ul>
+                        <ul class="copyright">
+                            <li>&copy; 2020 JOELIKE</li><li>GCP + Spring Boot + Thymeleaf</li>
+                        </ul>
+                    </footer>
+
+            </div>
+
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.scrollex.min.js"></script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+
+    </body>
+</html>
