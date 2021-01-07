@@ -14,8 +14,6 @@
 
 ## Portfolio Page
 
-저의 
-
 http://joel.star.is:8080
 
 ![main](https://user-images.githubusercontent.com/52098680/103768542-096da900-5066-11eb-8f57-4b6300fbb53c.png)
